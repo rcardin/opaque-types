@@ -7,7 +7,7 @@ object Main {
     object BarCode {
       def mkBarCode(code: String): Either[String, BarCode] = {
         Either.cond(
-          code.matches("\\d-\\d\\d\\d\\d\\d\\d-\\d\\d\\d\\d\\d\\d"),
+          code.matches("\\d-\\d{6}-\\d{6}"),
           code,
           s"The given code $code has not the right format"
         )   
